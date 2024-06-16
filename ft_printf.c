@@ -6,22 +6,45 @@
 /*   By: kkusunok <kkusunok@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 17:30:39 by kkusunok          #+#    #+#             */
-/*   Updated: 2024/06/13 19:09:33 by kkusunok         ###   ########.fr       */
+/*   Updated: 2024/06/16 17:19:02 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *, ...)
+int	ft_printf(const char *format, ...)
 {
-	hogehoge
-	return ();
+	int		count;
+	va_list	args;
+
+	count = 0;
+	va_start(args, format);
+	count = hogehoge(*format, args);
+	va_end(args);
+	return (count);
 }
 
-int	hogehoge()
+int	hogehoge(const char *format, va_list args)
 {
+	int	nbr;
 
-	
+	nbr = 0;
+	while (format)
+	{
+		if (format == "%")
+		{
+			format++;
+			if (format == "c")
+				ft_print_char(va_arg(args, char))
+			if (format == "d")
+			if (format == "h")
+			if (format == "h")
+			if (format == "h")
+			if (format == "h")
+		}
+		format++;
+	}
+	return (nbr);
 }
 
 /*
