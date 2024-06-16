@@ -6,7 +6,7 @@
 /*   By: kkusunok <kkusunok@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 17:30:39 by kkusunok          #+#    #+#             */
-/*   Updated: 2024/06/13 18:12:34 by kkusunok         ###   ########.fr       */
+/*   Updated: 2024/06/13 19:09:33 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,17 @@
 
 int	ft_printf(const char *, ...)
 {
-	if ()
-		return (NULL);
-// %c: Prints a single character
-	if ()
-	{
-		
-		write ()
-	}
-// %s: Prints a string
-	else if ()
-	{
-		write ()
-	}
-// %p: Prints a void * pointer in hexadecimal format
-// %d: Prints a decimal (base 10) number
-// %i: Prints an integer in base 10
-// %u: Prints an unsigned decimal (base 10) number
-// %x: Prints a number in hexadecimal (base 16) lowercase format
-// %X: Prints a number in hexadecimal (base 16) uppercase format
-// %%: Prints a percent sign
-	else
-	{
-		
-	}
-	return (0);
+	hogehoge
+	return ();
 }
 
+int	hogehoge()
+{
+
+	
+}
+
+/*
 int	main(void)
 {
 	char c = 'A';
@@ -91,3 +75,4 @@ int	main(void)
 
 	return (0);
 }
+*/
