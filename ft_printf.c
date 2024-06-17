@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkusunok <kkusunok@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: kkusunok <kkusunok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 17:30:39 by kkusunok          #+#    #+#             */
-/*   Updated: 2024/06/16 17:19:02 by kkusunok         ###   ########.fr       */
+/*   Updated: 2024/06/17 14:41:41 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ int	ft_printf(const char *format, ...)
 
 	count = 0;
 	va_start(args, format);
-	count = hogehoge(*format, args);
+	count = exec_printf(*format, args);
 	va_end(args);
 	return (count);
 }
 
-int	hogehoge(const char *format, va_list args)
+static int	exec_printf(const char *format, va_list args)
 {
 	int	nbr;
 
@@ -34,13 +34,20 @@ int	hogehoge(const char *format, va_list args)
 		if (format == "%")
 		{
 			format++;
+			if (format == "%")
+				nbr += write(1, "%", 1);
 			if (format == "c")
-				ft_print_char(va_arg(args, char))
-			if (format == "d")
-			if (format == "h")
-			if (format == "h")
-			if (format == "h")
-			if (format == "h")
+				nbr += ft_print_char(va_arg(args, char));
+			if (format == "s")
+				nbr += ft_print_str(va_arg(args, char));
+			if (format == "p")
+				nbr += ft_printf_ptr(va_arg(args, void*));
+			if (format == "i" || "d")
+				nbr += ft_printf_int(va_arg(args, int));
+			if (format == "u")
+				nbr += ft_printf_unsigned(va_arg(args, int));
+			if (format == "x" || "X")
+				nbr += ft_printf_hex(va_arg(args, int));
 		}
 		format++;
 	}
