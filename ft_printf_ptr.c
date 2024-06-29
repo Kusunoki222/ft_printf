@@ -6,7 +6,14 @@
 /*   By: kkusunok <kkusunok@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 19:04:40 by kkusunok          #+#    #+#             */
-/*   Updated: 2024/06/26 19:04:41 by kkusunok         ###   ########.fr       */
+/*   Updated: 2024/06/29 17:08:32 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
+
+int	ft_print_ptr(void ptr)
+{
+	
+	return()
+}

@@ -6,11 +6,13 @@
 /*   By: kkusunok <kkusunok@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 17:30:39 by kkusunok          #+#    #+#             */
-/*   Updated: 2024/06/26 19:04:45 by kkusunok         ###   ########.fr       */
+/*   Updated: 2024/06/29 17:56:40 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static int	exec_printf(const char *format, va_list args);
 
 int	ft_printf(const char *format, ...)
 {
@@ -19,7 +21,7 @@ int	ft_printf(const char *format, ...)
 
 	count = 0;
 	va_start(args, format);
-	count = exec_printf(*format, args);
+	count = exec_printf(format, args);
 	va_end(args);
 	return (count);
 }
@@ -29,26 +31,28 @@ static int	exec_printf(const char *format, va_list args)
 	int	nbr;
 
 	nbr = 0;
-	while (format)
+	while (*format)
 	{
-		if (format == "%")
+		if (*format == '%')
 		{
 			format++;
-			if (format == "%")
+			if (*format == '%')
 				nbr += write(1, "%", 1);
-			if (format == "c")
+			else if (*format == 'c')
 				nbr += ft_print_char(va_arg(args, char));
-			if (format == "s")
-				nbr += ft_print_str(va_arg(args, char));
-			if (format == "p")
-				nbr += ft_printf_ptr(va_arg(args, void*));
-			if (format == "i" || "d")
+			else if (*format == 's')
+				nbr += ft_print_str(va_arg(args, char *));
+			else if (*format == 'p')
+				nbr += ft_printf_ptr(va_arg(args, void *));
+			else if (*format == 'i' || 'd')
 				nbr += ft_printf_int(va_arg(args, int));
-			if (format == "u")
-				nbr += ft_printf_unsigned(va_arg(args, int));
-			if (format == "x" || "X")
-				nbr += ft_printf_hex(va_arg(args, int));
+			else if (*format == 'u')
+				nbr += ft_printf_unsigned(va_arg(args, unsigned int));
+			else if (*format == 'x' || 'X')
+				nbr += ft_printf_hex(va_arg(args, unsigned int));
 		}
+		else
+			nbr += write(1, format, 1);
 		format++;
 	}
 	return (nbr);
