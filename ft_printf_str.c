@@ -14,9 +14,6 @@
 
 int	ft_print_str(char *str)
 {
-	int	i;
-
-	i = 0;
 	while (*str)
 	{
 		write(1, str, 1);
