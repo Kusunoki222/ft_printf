@@ -6,7 +6,7 @@
 /*   By: kkusunok <kkusunok@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 17:30:39 by kkusunok          #+#    #+#             */
-/*   Updated: 2024/06/29 17:56:40 by kkusunok         ###   ########.fr       */
+/*   Updated: 2024/09/10 17:33:38 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	exec_printf(const char *format, va_list args);
 
 int	ft_printf(const char *format, ...)
 {
-	int		count;
+	size_t	count;
 	va_list	args;
 
 	count = 0;
@@ -44,11 +44,11 @@ static int	exec_printf(const char *format, va_list args)
 				nbr += ft_print_str(va_arg(args, char *));
 			else if (*format == 'p')
 				nbr += ft_printf_ptr(va_arg(args, void *));
-			else if (*format == 'i' || 'd')
+			else if (*format == 'i' || *format == 'd')
 				nbr += ft_printf_int(va_arg(args, int));
 			else if (*format == 'u')
 				nbr += ft_printf_unsigned(va_arg(args, unsigned int));
-			else if (*format == 'x' || 'X')
+			else if (*format == 'x' || *format == 'X')
 				nbr += ft_printf_hex(va_arg(args, unsigned int));
 		}
 		else

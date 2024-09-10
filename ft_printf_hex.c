@@ -6,10 +6,10 @@
 /*   By: kkusunok <kkusunok@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 17:21:59 by kkusunok          #+#    #+#             */
-/*   Updated: 2024/09/09 17:29:48 by kkusunok         ###   ########.fr       */
+/*   Updated: 2024/09/10 17:15:26 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-testetesteete
+#include "ft_printf.h"
 
 
