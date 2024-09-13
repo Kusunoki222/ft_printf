@@ -6,31 +6,49 @@
 /*   By: kkusunok <kkusunok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 19:04:40 by kkusunok          #+#    #+#             */
-/*   Updated: 2024/09/13 16:49:26 by kkusunok         ###   ########.fr       */
+/*   Updated: 2024/09/13 18:27:56 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	putnbr_base(unsigned long long nbr, char *base)
+int	print_hex(unsigned long long nbr)
 {
-	int				count;
-	unsigned int	base_len;
+	int		count;
+	char	*base;
 
-	base_len = 0;
+	count = 0;
+	base = "0123456789abcdef";
+
+	if (nbr >= 16)
+		count += print_hex(nbr / 16);
+	count += write(1, &base[nbr % 16], 1);
+	return (count);
 }
 
 
 int	ft_printf_ptr(void *ptr)
 {
-	int				count;
-	unsigned long	address;
+	int					count;
+	unsigned long long	address;
 
 	count = 0;
 	if (!ptr)
 		return (write(1, "(nil)", 5));
-	address = (unsigned long)ptr;
+	address = (unsigned long long)ptr;
 	count += write(1, "0x", 2);
-	count += putnbr_base(address, "0123456788abcdef");
+	count += print_hex(address);
 	return (count);
 }
+
+// # include	<stdio.h>
+// # include	<unistd.h>
+
+// int	main(void)
+// {
+// 	void *ptr = (void *)0x1234abcd;
+// 	printf("Original: %p\n", ptr);
+// 	ft_printf_ptr(ptr);
+// 	write(1, "\n", 1);
+// 	return 0;
+// }
