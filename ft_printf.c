@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkusunok <kkusunok@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: kkusunok <kkusunok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 17:30:39 by kkusunok          #+#    #+#             */
-/*   Updated: 2024/09/11 16:42:31 by kkusunok         ###   ########.fr       */
+/*   Updated: 2024/09/13 17:14:34 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,14 @@ int	ft_printf(const char *format, ...)
 			count += ft_print_char(*format);
 		else if (*format == '%')
 			count += exec_printf(*(++format), args);
-		if (*format)
-			format++;
+		format++;
 	}
 	va_end(args);
 	return (count);
 }
+
+
+
 
 /*
 int	main(void)
