@@ -1,44 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_unsigned.c                               :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkusunok <kkusunok@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 19:04:54 by kkusunok          #+#    #+#             */
-/*   Updated: 2024/09/24 16:40:32 by kkusunok         ###   ########.fr       */
+/*   Created: 2024/05/08 18:37:02 by kkusunok          #+#    #+#             */
+/*   Updated: 2024/09/24 16:43:02 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//#include "libft.h"
 #include "ft_printf.h"
 
-static void	print_unsigned(unsigned int n)
+size_t	ft_strlen(const char *str)
 {
-	if (n >= 10)
+	size_t	length;
+
+	length = 0;
+	if (!str)
+		return (0);
+	while (*str != '\0')
 	{
-		print_unsigned(n / 10);
-		print_unsigned(n % 10);
+		str++;
+		length++;
 	}
-	else
-	{
-		write(1, &(char){n + '0'}, 1);
-	}
+	return (length);
 }
 
-int	ft_printf_unsigned(unsigned int n)
-{
-	int				len;
-	unsigned int	temp;
-
-	len = 0;
-	temp = n;
-	while (temp != 0)
-	{
-		len++;
-		temp /= 10;
-	}
-	if (n == 0)
-		len = 1;
-	print_unsigned(n);
-	return (len);
-}
+// int	main(void)
+// {
+// 	char	text[] = "Hello World";
+// 	int	length_main = ft_strlen(text);
+// 	printf("文字列の長さ: %d\n", length_main);
+// 	return (0);
+// }

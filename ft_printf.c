@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkusunok <kkusunok@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kkusunok <kkusunok@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 17:30:39 by kkusunok          #+#    #+#             */
-/*   Updated: 2024/09/24 15:29:21 by kkusunok         ###   ########.fr       */
+/*   Updated: 2024/09/24 16:14:45 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	exec_printf(const char type, va_list args)
 	if (type == '%')
 		nbr = write(1, "%", 1);
 	else if (type == 'c')
-		nbr = ft_printf_char(va_arg(args, char));
+		nbr = ft_printf_char((char)va_arg(args, int));
 	else if (type == 's')
 		nbr = ft_printf_str(va_arg(args, char *));
 	else if (type == 'p')
@@ -34,7 +34,7 @@ static int	exec_printf(const char type, va_list args)
 	else if (type == 'X')
 		nbr = ft_printf_hex(va_arg(args, unsigned int), 1);
 	else
-		nbr = write(1, type, 1);
+		nbr = write(1, &type, 1);
 	return (nbr);
 }
 
@@ -48,7 +48,7 @@ int	ft_printf(const char *format, ...)
 	while (*format)
 	{
 		if (*format != '%')
-			count += ft_print_char(*format);
+			count += ft_printf_char(*format);
 		else if (*format == '%')
 			count += exec_printf(*(++format), args);
 		format++;
@@ -57,7 +57,6 @@ int	ft_printf(const char *format, ...)
 	return (count);
 }
 
-/*
 int	main(void)
 {
 	char c = 'A';
@@ -106,4 +105,3 @@ int	main(void)
 
 	return (0);
 }
-*/

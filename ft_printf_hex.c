@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_hex.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkusunok <kkusunok@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kkusunok <kkusunok@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 17:21:59 by kkusunok          #+#    #+#             */
-/*   Updated: 2024/09/24 15:39:46 by kkusunok         ###   ########.fr       */
+/*   Updated: 2024/09/24 16:42:01 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	print_hex_lower_x(unsigned long long nbr)
+static int	print_hex_lower(unsigned long long nbr)
 {
 	int		count;
 	char	*base;
@@ -20,12 +20,12 @@ static int	print_hex_lower_x(unsigned long long nbr)
 	count = 0;
 	base = "0123456789abcdef";
 	if (nbr >= 16)
-		count += print_hex(nbr / 16);
+		count += print_hex_lower(nbr / 16);
 	count += write(1, &base[nbr % 16], 1);
 	return (count);
 }
 
-static int	print_hex_upper_x(unsigned long long nbr)
+static int	print_hex_upper(unsigned long long nbr)
 {
 	int		count;
 	char	*base;
@@ -33,7 +33,7 @@ static int	print_hex_upper_x(unsigned long long nbr)
 	count = 0;
 	base = "0123456789ABCDEF";
 	if (nbr >= 16)
-		count += print_hex(nbr / 16);
+		count += print_hex_upper(nbr / 16);
 	count += write(1, &base[nbr % 16], 1);
 	return (count);
 }
@@ -48,9 +48,9 @@ int	ft_printf_hex(unsigned int nbr, int sign)
 		return (write(1, "(NULL)", 5));
 	address = (unsigned long long)nbr;
 	if (sign == 0)
-		count += print_hex_lower_x(address);
+		count += print_hex_lower(address);
 	if (sign == 1)
-		count += print_hex_upper_x(address);
+		count += print_hex_upper(address);
 	return (count);
 }
 
