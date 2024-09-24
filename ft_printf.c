@@ -6,7 +6,7 @@
 /*   By: kkusunok <kkusunok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 17:30:39 by kkusunok          #+#    #+#             */
-/*   Updated: 2024/09/13 17:14:34 by kkusunok         ###   ########.fr       */
+/*   Updated: 2024/09/24 15:14:40 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,10 @@ static int	exec_printf(const char type, va_list args)
 		nbr = ft_printf_int(va_arg(args, int));
 	else if (type == 'u')
 		nbr = ft_printf_unsigned(va_arg(args, unsigned int));
-	else if (type == 'x' || type == 'X')
-		nbr = ft_printf_hex(va_arg(args, unsigned int));
+	else if (type == 'x')
+		nbr = ft_printf_hex(va_arg(args, unsigned int), 0);
+	else if (type == 'X')
+		nbr = ft_printf_hex(va_arg(args, unsigned int), 1);
 	else
 		nbr = write(1, type, 1);
 	return (nbr);

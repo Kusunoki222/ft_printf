@@ -6,26 +6,24 @@
 /*   By: kkusunok <kkusunok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 19:04:40 by kkusunok          #+#    #+#             */
-/*   Updated: 2024/09/13 18:27:56 by kkusunok         ###   ########.fr       */
+/*   Updated: 2024/09/24 15:16:37 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_hex(unsigned long long nbr)
+static int	print_hex(unsigned long long nbr)
 {
 	int		count;
 	char	*base;
 
 	count = 0;
 	base = "0123456789abcdef";
-
 	if (nbr >= 16)
 		count += print_hex(nbr / 16);
 	count += write(1, &base[nbr % 16], 1);
 	return (count);
 }
-
 
 int	ft_printf_ptr(void *ptr)
 {
@@ -43,12 +41,13 @@ int	ft_printf_ptr(void *ptr)
 
 // # include	<stdio.h>
 // # include	<unistd.h>
-
 // int	main(void)
 // {
-// 	void *ptr = (void *)0x1234abcd;
-// 	printf("Original: %p\n", ptr);
+// 	void	*ptr;
+// 	// ptr = (void *)29;
+// 	ptr = (void *)0x1234abcd;
+// 	printf("hogehoge: %p\n", ptr);
 // 	ft_printf_ptr(ptr);
 // 	write(1, "\n", 1);
-// 	return 0;
+// 	return (0);
 // }

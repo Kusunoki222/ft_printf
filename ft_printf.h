@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkusunok <kkusunok@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: kkusunok <kkusunok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 16:23:38 by kkusunok          #+#    #+#             */
-/*   Updated: 2024/09/11 16:25:12 by kkusunok         ###   ########.fr       */
+/*   Updated: 2024/09/13 18:46:00 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include	<stdarg.h>
 
 int	ft_printf(const char *format, ...);
-int	ft_printf_ptr(unsigned long long ptr);
+int	ft_printf_ptr(void *ptr);
 int	ft_printf_char(char p);
 int	ft_printf_int(int decimal);
 int	ft_print_str(char *str);
