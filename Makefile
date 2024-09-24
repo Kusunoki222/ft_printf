@@ -6,18 +6,20 @@
 #    By: kkusunok <kkusunok@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/11 16:26:00 by kkusunok          #+#    #+#              #
-#    Updated: 2024/09/24 16:25:40 by kkusunok         ###   ########.fr        #
+#    Updated: 2024/09/24 17:21:16 by kkusunok         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = printf.a
+NAME = libftprintf.a
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
+AR = ar
+LIBFT = ./libft/libft.a
+
 SRCS = ft_printf.c ft_printf_char.c ft_printf_str.c ft_printf_ptr.c \
-ft_printf_int.c ft_printf_unsigned.c ft_printf_hex.c \
-ft_itoa.c ft_strlen.c
+ft_printf_int.c ft_printf_unsigned.c ft_printf_hex.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -27,7 +29,7 @@ RM = rm -f
 all: $(NAME)
 
 #library
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(LIBFT)
 	$(AR) rcs $@ $^
 
 #compile

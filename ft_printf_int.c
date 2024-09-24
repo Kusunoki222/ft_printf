@@ -6,7 +6,7 @@
 /*   By: kkusunok <kkusunok@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 19:04:37 by kkusunok          #+#    #+#             */
-/*   Updated: 2024/09/24 16:36:34 by kkusunok         ###   ########.fr       */
+/*   Updated: 2024/09/24 19:04:18 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_printf_int(int decimal)
 	d = ft_itoa(decimal);
 	while (*d)
 	{
-		write(1, &d, 1);
+		write(1, d, 1);
 		d++;
 		i++;
 	}

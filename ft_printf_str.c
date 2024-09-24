@@ -6,13 +6,13 @@
 /*   By: kkusunok <kkusunok@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 19:04:50 by kkusunok          #+#    #+#             */
-/*   Updated: 2024/09/11 17:14:32 by kkusunok         ###   ########.fr       */
+/*   Updated: 2024/09/24 17:41:41 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_str(char *str)
+int	ft_printf_str(char *str)
 {
 	if (!str)
 		str = "(null)";

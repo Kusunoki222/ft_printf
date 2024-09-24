@@ -6,7 +6,7 @@
 /*   By: kkusunok <kkusunok@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 16:23:38 by kkusunok          #+#    #+#             */
-/*   Updated: 2024/09/24 16:45:07 by kkusunok         ###   ########.fr       */
+/*   Updated: 2024/09/24 17:29:05 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include	<stdio.h>
 # include	<stdarg.h>
 # include	<stddef.h>
-# include	<stdlib.h>
+# include	"libft/libft.h"
 
 int		ft_printf(const char *format, ...);
 int		ft_printf_char(char p);
@@ -26,7 +26,5 @@ int		ft_printf_int(int decimal);
 int		ft_printf_ptr(void *ptr);
 int		ft_printf_str(char *str);
 int		ft_printf_unsigned(unsigned int n);
-size_t	ft_strlen(const char *str);
-char	*ft_itoa(int n);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: kkusunok <kkusunok@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 17:30:39 by kkusunok          #+#    #+#             */
-/*   Updated: 2024/09/24 16:14:45 by kkusunok         ###   ########.fr       */
+/*   Updated: 2024/09/24 17:26:25 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,51 +57,51 @@ int	ft_printf(const char *format, ...)
 	return (count);
 }
 
-int	main(void)
-{
-	char c = 'A';
-	char str[] = "Hello, World!";
-	void *ptr = (void *)0x1234abcd;
-	int dec = 12345;
-	int integer = -12345;
-	unsigned int udec = 54321;
-	int hex = 0xabc123;
+// int	main(void)
+// {
+// 	char c = 'A';
+// 	char str[] = "Hello, World!";
+// 	void *ptr = (void *)0x1234abcd;
+// 	int dec = 12345;
+// 	int integer = -12345;
+// 	unsigned int udec = 54321;
+// 	int hex = 0xabc123;
 
-	// %c: Prints a single character
-	printf("Character: %c\n", c);
-	ft_printf("ft_Character: %c\n\n", c);
+// 	// %c: Prints a single character
+// 	printf("Character: %c\n", c);
+// 	ft_printf("ft_Character: %c\n\n", c);
 
-	// %s: Prints a string	
-	printf("String: %s\n", str);
-	ft_printf("ft_String: %s\n\n", str);
+// 	// %s: Prints a string	
+// 	printf("String: %s\n", str);
+// 	ft_printf("ft_String: %s\n\n", str);
 
-	// %p: Prints a void * pointer in hexadecimal format	
-	printf("Pointer: %p\n", ptr);
-	ft_printf("ft_Pointer: %p\n\n", ptr);
+// 	// %p: Prints a void * pointer in hexadecimal format	
+// 	printf("Pointer: %p\n", ptr);
+// 	ft_printf("ft_Pointer: %p\n\n", ptr);
 
-	// %d: Prints a decimal (base 10) number
-	printf("Decimal: %d\n", dec);
-	ft_printf("ft_Decimal: %d\n\n", dec);
+// 	// %d: Prints a decimal (base 10) number
+// 	printf("Decimal: %d\n", dec);
+// 	ft_printf("ft_Decimal: %d\n\n", dec);
 
-	// %i: Prints an integer in base 10
-	printf("Integer: %i\n", integer);
-	ft_printf("ft_Integer: %i\n\n", integer);
+// 	// %i: Prints an integer in base 10
+// 	printf("Integer: %i\n", integer);
+// 	ft_printf("ft_Integer: %i\n\n", integer);
 
-	// %u: Prints an unsigned decimal (base 10) number
-	printf("Unsigned Decimal: %u\n", udec);
-	ft_printf("ft_Unsigned Decimal: %u\n\n", udec);
+// 	// %u: Prints an unsigned decimal (base 10) number
+// 	printf("Unsigned Decimal: %u\n", udec);
+// 	ft_printf("ft_Unsigned Decimal: %u\n\n", udec);
 
-	// %x: Prints a number in hexadecimal (base 16) lowercase format
-	printf("Hexadecimal (lowercase): %x\n", hex);
-	ft_printf("ft_Hexadecimal (lowercase): %x\n\n", hex);
+// 	// %x: Prints a number in hexadecimal (base 16) lowercase format
+// 	printf("Hexadecimal (lowercase): %x\n", hex);
+// 	ft_printf("ft_Hexadecimal (lowercase): %x\n\n", hex);
 
-	// %X: Prints a number in hexadecimal (base 16) uppercase format
-	printf("Hexadecimal (uppercase): %X\n", hex);
-	ft_printf("ft_Hexadecimal (uppercase): %X\n\n", hex);
+// 	// %X: Prints a number in hexadecimal (base 16) uppercase format
+// 	printf("Hexadecimal (uppercase): %X\n", hex);
+// 	ft_printf("ft_Hexadecimal (uppercase): %X\n\n", hex);
 
-	// %%: Prints a percent sign
-	printf("Percent Sign: %%\n");
-	ft_printf("ft_Percent Sign: %%\n\n");
+// 	// %%: Prints a percent sign
+// 	printf("Percent Sign: %%\n");
+// 	ft_printf("ft_Percent Sign: %%\n\n");
 
-	return (0);
-}
+// 	return (0);
+// }
