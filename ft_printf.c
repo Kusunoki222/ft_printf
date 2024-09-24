@@ -6,7 +6,7 @@
 /*   By: kkusunok <kkusunok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 17:30:39 by kkusunok          #+#    #+#             */
-/*   Updated: 2024/09/24 15:14:40 by kkusunok         ###   ########.fr       */
+/*   Updated: 2024/09/24 15:29:21 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,6 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-
-
-
 
 /*
 int	main(void)
