@@ -6,7 +6,7 @@
 /*   By: kkusunok <kkusunok@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 17:21:59 by kkusunok          #+#    #+#             */
-/*   Updated: 2024/09/24 16:42:01 by kkusunok         ###   ########.fr       */
+/*   Updated: 2024/09/25 13:19:03 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	ft_printf_hex(unsigned int nbr, int sign)
 
 	count = 0;
 	if (!nbr)
-		return (write(1, "(NULL)", 5));
+		return (write(1, "(nil)", 5));
 	address = (unsigned long long)nbr;
 	if (sign == 0)
 		count += print_hex_lower(address);

@@ -6,7 +6,7 @@
 /*   By: kkusunok <kkusunok@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 18:59:14 by kkusunok          #+#    #+#             */
-/*   Updated: 2024/09/24 16:15:17 by kkusunok         ###   ########.fr       */
+/*   Updated: 2024/09/25 13:19:02 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_printf_char(char p)
 {
 	if (!p)
-		return (write(1, "(NULL)", 5));
+		return (write(1, "(nil)", 5));
 	write(1, &p, 1);
 	return (1);
 }
