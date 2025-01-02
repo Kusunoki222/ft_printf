@@ -6,7 +6,7 @@
 /*   By: kkusunok <kkusunok@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 17:30:39 by kkusunok          #+#    #+#             */
-/*   Updated: 2024/09/24 17:26:25 by kkusunok         ###   ########.fr       */
+/*   Updated: 2025/01/02 19:12:12 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,10 @@ int	ft_printf(const char *format, ...)
 	return (count);
 }
 
-// int	main(void)
-// {
-// 	char c = 'A';
+/*
+int	main(void)
+{
+	char c = 0;
 // 	char str[] = "Hello, World!";
 // 	void *ptr = (void *)0x1234abcd;
 // 	int dec = 12345;
@@ -67,9 +68,9 @@ int	ft_printf(const char *format, ...)
 // 	unsigned int udec = 54321;
 // 	int hex = 0xabc123;
 
-// 	// %c: Prints a single character
-// 	printf("Character: %c\n", c);
-// 	ft_printf("ft_Character: %c\n\n", c);
+	// %c: Prints a single character
+	printf("Character: %c\n", c);
+	ft_printf("ft_Character: %c\n\n", c);
 
 // 	// %s: Prints a string	
 // 	printf("String: %s\n", str);
@@ -103,5 +104,6 @@ int	ft_printf(const char *format, ...)
 // 	printf("Percent Sign: %%\n");
 // 	ft_printf("ft_Percent Sign: %%\n\n");
 
-// 	return (0);
-// }
+	return (0);
+}
+*/

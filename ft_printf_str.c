@@ -6,7 +6,7 @@
 /*   By: kkusunok <kkusunok@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 19:04:50 by kkusunok          #+#    #+#             */
-/*   Updated: 2024/09/25 13:25:12 by kkusunok         ###   ########.fr       */
+/*   Updated: 2025/01/02 19:22:53 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_printf_str(char *str)
 
 	i = 0;
 	if (!str)
-		str = "(nil)";
+		str = "(null)";
 	while (*str)
 	{
 		i += write(1, str, 1);

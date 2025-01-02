@@ -6,7 +6,7 @@
 #    By: kkusunok <kkusunok@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/11 16:26:00 by kkusunok          #+#    #+#              #
-#    Updated: 2024/09/24 17:21:16 by kkusunok         ###   ########.fr        #
+#    Updated: 2025/01/02 18:11:45 by kkusunok         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,22 +25,32 @@ OBJS = $(SRCS:.c=.o)
 
 RM = rm -f
 
-#default target
+# default target
 all: $(NAME)
 
-#library
+# library
 $(NAME): $(OBJS) $(LIBFT)
-	$(AR) rcs $@ $^
+	$(AR) x $(LIBFT)
+	$(AR) rcs $@ $(OBJS) *.o
+	$(RM) *.o
 
-#compile
+# libft
+$(LIBFT):
+	make -C ./libft
+
+# compile
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-#clean
+# clean
 clean:
 	$(RM) $(OBJS)
+	- make clean -C ./libft
+
 fclean: clean
 	$(RM) $(NAME)
+	- make fclean -C ./libft
+
 re: fclean all
 
-.PHONY : all clean fclean re
+.PHONY: all clean fclean re $(LIBFT)
