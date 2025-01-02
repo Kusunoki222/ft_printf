@@ -6,7 +6,7 @@
 /*   By: kkusunok <kkusunok@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 18:59:14 by kkusunok          #+#    #+#             */
-/*   Updated: 2025/01/02 19:09:59 by kkusunok         ###   ########.fr       */
+/*   Updated: 2025/01/02 20:23:48 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,5 @@ int	ft_printf_char(char p)
 // 	ch = 0;
 // 	ft_printf_char(ch);
 // 	printf("%c",ch);
-
 // 	return(0);
 // }
