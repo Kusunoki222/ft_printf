@@ -6,7 +6,7 @@
 /*   By: kkusunok <kkusunok@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 17:21:59 by kkusunok          #+#    #+#             */
-/*   Updated: 2024/10/06 17:29:21 by kkusunok         ###   ########.fr       */
+/*   Updated: 2025/01/02 21:26:10 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ static int	print_hex_lower(unsigned long long nbr)
 	if (nbr >= 16)
 		count += print_hex_lower(nbr / 16);
 	count += write(1, &base[nbr % 16], 1);
-	printf("%i\n", count);
 	return (count);
 }
 
@@ -36,7 +35,6 @@ static int	print_hex_upper(unsigned long long nbr)
 	if (nbr >= 16)
 		count += print_hex_upper(nbr / 16);
 	count += write(1, &base[nbr % 16], 1);
-	printf("%i\n", count);
 	return (count);
 }
 
@@ -46,8 +44,11 @@ int	ft_printf_hex(unsigned int nbr, int sign)
 	unsigned long long	address;
 
 	count = 0;
-	if (!nbr)
-		return (write(1, "(nil)", 5));
+	if (nbr == 0)
+	{
+		write(1, "0", 1);
+		return (1);
+	}
 	address = (unsigned long long)nbr;
 	if (sign == 0)
 		count += print_hex_lower(address);
@@ -63,7 +64,7 @@ int	ft_printf_hex(unsigned int nbr, int sign)
 // {
 // 	unsigned int	ptr;
 
-// 	ptr = 0x1234abcd;
+// 	ptr = 17;
 // 	printf("Original x: %x\n", ptr);
 // 	printf("Original X: %X\n", ptr);
 // 	ft_printf_hex(ptr, 0);

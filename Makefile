@@ -6,14 +6,14 @@
 #    By: kkusunok <kkusunok@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/11 16:26:00 by kkusunok          #+#    #+#              #
-#    Updated: 2025/01/02 18:11:45 by kkusunok         ###   ########.fr        #
+#    Updated: 2025/01/02 21:12:37 by kkusunok         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+# CFLAGS = -Wall -Wextra -Werror
 
 AR = ar
 LIBFT = ./libft/libft.a

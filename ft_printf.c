@@ -6,7 +6,7 @@
 /*   By: kkusunok <kkusunok@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 17:30:39 by kkusunok          #+#    #+#             */
-/*   Updated: 2025/01/02 19:12:12 by kkusunok         ###   ########.fr       */
+/*   Updated: 2025/01/02 21:21:48 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,17 +60,17 @@ int	ft_printf(const char *format, ...)
 /*
 int	main(void)
 {
-	char c = 0;
+// char c = 0;
 // 	char str[] = "Hello, World!";
 // 	void *ptr = (void *)0x1234abcd;
 // 	int dec = 12345;
 // 	int integer = -12345;
 // 	unsigned int udec = 54321;
-// 	int hex = 0xabc123;
+	int hex = 0;
 
-	// %c: Prints a single character
-	printf("Character: %c\n", c);
-	ft_printf("ft_Character: %c\n\n", c);
+	// // %c: Prints a single character
+	// printf("Character: %c\n", c);
+	// ft_printf("ft_Character: %c\n\n", c);
 
 // 	// %s: Prints a string	
 // 	printf("String: %s\n", str);
@@ -92,13 +92,13 @@ int	main(void)
 // 	printf("Unsigned Decimal: %u\n", udec);
 // 	ft_printf("ft_Unsigned Decimal: %u\n\n", udec);
 
-// 	// %x: Prints a number in hexadecimal (base 16) lowercase format
-// 	printf("Hexadecimal (lowercase): %x\n", hex);
-// 	ft_printf("ft_Hexadecimal (lowercase): %x\n\n", hex);
+	// %x: Prints a number in hexadecimal (base 16) lowercase format
+	printf("Hexadecimal (lowercase): %x\n", hex);
+	ft_printf("ft_Hexadecimal (lowercase): %x\n\n", hex);
 
-// 	// %X: Prints a number in hexadecimal (base 16) uppercase format
-// 	printf("Hexadecimal (uppercase): %X\n", hex);
-// 	ft_printf("ft_Hexadecimal (uppercase): %X\n\n", hex);
+	// %X: Prints a number in hexadecimal (base 16) uppercase format
+	printf("Hexadecimal (uppercase): %X\n", hex);
+	ft_printf("ft_Hexadecimal (uppercase): %X\n\n", hex);
 
 // 	// %%: Prints a percent sign
 // 	printf("Percent Sign: %%\n");
