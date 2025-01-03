@@ -6,13 +6,13 @@
 /*   By: kkusunok <kkusunok@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 17:21:59 by kkusunok          #+#    #+#             */
-/*   Updated: 2025/01/02 21:26:10 by kkusunok         ###   ########.fr       */
+/*   Updated: 2025/01/03 16:13:51 by kkusunok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	print_hex_lower(unsigned long long nbr)
+static int	print_hex_lower(unsigned int nbr)
 {
 	int		count;
 	char	*base;
@@ -25,7 +25,7 @@ static int	print_hex_lower(unsigned long long nbr)
 	return (count);
 }
 
-static int	print_hex_upper(unsigned long long nbr)
+static int	print_hex_upper(unsigned int nbr)
 {
 	int		count;
 	char	*base;
@@ -38,22 +38,20 @@ static int	print_hex_upper(unsigned long long nbr)
 	return (count);
 }
 
-int	ft_printf_hex(unsigned int nbr, int sign)
+int	ft_printf_hex(unsigned int adress, int sign)
 {
-	int					count;
-	unsigned long long	address;
+	int				count;
 
 	count = 0;
-	if (nbr == 0)
+	if (adress == 0)
 	{
 		write(1, "0", 1);
 		return (1);
 	}
-	address = (unsigned long long)nbr;
 	if (sign == 0)
-		count += print_hex_lower(address);
+		count += print_hex_lower(adress);
 	if (sign == 1)
-		count += print_hex_upper(address);
+		count += print_hex_upper(adress);
 	return (count);
 }
 
