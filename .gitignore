@@ -2,5 +2,3 @@
 *.o
 a.out
 .gitignore
-test_1.c
-test_2.c
